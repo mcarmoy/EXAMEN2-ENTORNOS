@@ -14,10 +14,12 @@ def listar_tareas(tareas):
       else:
          print(f"[]", i["titulo"])
 
-
-
-
-
+def contar_pendientes(tareas):
+   contadorPendientes = 0
+   for i in tareas:
+      if i["hecha"] == False:
+         contadorPendientes = contadorPendientes + 1
+   print(f"Hay {contadorPendientes} tareas pendientes")
 
 
 if __name__ == "__main__":
@@ -26,6 +28,17 @@ if __name__ == "__main__":
                 {"titulo": "Hacer ejercicio", "hecha": True},
                 {"titulo": "Leer 10 páginas", "hecha": False}]
  
+ #Prueba
+ #1
+ listar_tareas(ListaAgenda)
+ #2
+ agregar_tareas(ListaAgenda, "Sacar la basura")
+ print(ListaAgenda)
+ #3
+ marcar_hecha(ListaAgenda, "Estudiar Python")
+ print(ListaAgenda)
+ #4
+ listar_tareas(ListaAgenda)
 
 
 
